@@ -15,6 +15,7 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
 
 from api_yamdb.settings import ADMIN_EMAIL
+
 from .filters import TitleFilter
 from .mixins import CreateListDestroyMixin
 from .permissions import (AuthorAdminModeratorOrReadOnly, IsAdminOrReadOnly,
@@ -23,7 +24,7 @@ from .serializers import (CategorySerializer, CommentSerializer,
                           GenreSerializer, RegisterSerializer,
                           ReviewSerializer, TitleCreateSerializer,
                           TitleSerializer, TokenSerializer, UserSerializer)
-from reviews.models import Category, Genre, Review, Title
+from reviews.models import Category, Review, Title, Genre
 from users.models import CustomUser
 
 
