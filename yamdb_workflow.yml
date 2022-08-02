@@ -26,11 +26,8 @@ jobs:
       run: |
         # запуск проверки проекта по flake8
         python -m flake8
-        # перейти в папку, содержащую manage.py — 
-        #<корневая_папка_yamdb_final>/<папка_проекта>/manage.py
-        cd api_yamdb/
         # запустить написанные разработчиком тесты
-        python manage.py test
+        pytest
 
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
@@ -53,6 +50,7 @@ jobs:
         # Пуш образа в Docker Hub
         uses: docker/build-push-action@v2 
         with:
+          context: ./api_yamdb
           push: true
           tags: ${{ secrets.MY_SECRET_LOGIN }}/api_yamdb:latest
   
@@ -68,6 +66,8 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
+            sudo systemctl stop nginx
+            sudo docker-compose pull web
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env
