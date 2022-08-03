@@ -19,11 +19,11 @@
 # Как запустить проект
 Для начала на сервере остановите службу nginx, введите команду:
 ```
- sudo systemctl stop nginx
+    sudo systemctl stop nginx
 ```
 Установите docker:
 ```
-sudo apt install docker.io
+    sudo apt install docker.io
 ```
 Теперь установите docker-compose, c этим вам поможет официальная документация по ссылке:
 https://docs.docker.com/compose/install/
