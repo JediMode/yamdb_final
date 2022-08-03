@@ -1,3 +1,5 @@
+![example workflow](https://github.com/JediMode/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+
 # Проект yamdb_final на удалённом сервере
 Основан на групповом проекте YaMDb доступный по ссылке [https://github.com/JediMode/api_yamdb].
 Реализовал workflows, позволяющие существенно сократить и упростить разработку приложения, выявление ошибок и их устранение. Worflows настроены на соответствие кода PEP8, заранее прописанным тестам, создание и пуш образа на Docker Hub, деплой проекта в главную ветку и оповещение о статусе в телеграм-бот.
