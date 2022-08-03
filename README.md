@@ -1,5 +1,3 @@
-![example workflow](https://github.com/JediMode/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
-
 # Проект yamdb_final на удалённом сервере
 Основан на групповом проекте YaMDb доступный по ссылке [https://github.com/JediMode/api_yamdb].
 Реализовал workflows, позволяющие существенно сократить и упростить разработку приложения, выявление ошибок и их устранение. Worflows настроены на соответствие кода PEP8, заранее прописанным тестам, создание и пуш образа на Docker Hub, деплой проекта в главную ветку и оповещение о статусе в телеграм-бот.
@@ -26,11 +24,9 @@ PosgreSQL 14.4
 sudo apt install docker.io
 ```
 Теперь установите docker-compose, c этим вам поможет официальная документация по ссылке:
-```
 https://docs.docker.com/compose/install/
-```
-Скачайте проект и перейдите в yamdb_final/infra/, затем скопируйте себе на сервер docker-compose.yaml и директорию nginx.
-Запустите docker-compose. У вас развернётся проект, запущенный через Gunicorn с базой данных Postgres:
+
+Скачайте проект и перейдите в yamdb_final/infra/, затем скопируйте себе на сервер docker-compose.yaml и директорию nginx. На сервере запустите docker-compose командой:
 ```
     docker-compose up -d --build
 ```
